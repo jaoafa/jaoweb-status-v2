@@ -7,7 +7,7 @@
       :loading="isLoading(service)"
     >
       <v-card-title class="d-flex justify-start py-3">
-        <v-badge dot :color="getStatusValue(service, 'status')">
+        <v-badge left :color="getStatusValue(service, 'status')">
           <v-icon>{{ service.icon }}</v-icon>
         </v-badge>
         <span
@@ -17,11 +17,10 @@
         <span class="ml-3" v-text="service.name" />
         <v-spacer />
         <v-btn
-          v-if="isExistsHelp(service)"
+          v-show="isExistsHelp(service)"
           class="mx-1"
           elevation="3"
           icon
-          small
           @click="dialog = true"
         >
           <v-icon>mdi-help</v-icon>
@@ -29,11 +28,11 @@
       </v-card-title>
 
       <v-card-text class="py-0">
-        <v-chip
+        <span
           v-for="tag in service.tags"
-          :key="tag"
+          :key="service.sid + '-' + tag"
           small
-          class="mr-1"
+          class="mr-1 status-chip"
           v-text="tag"
         />
       </v-card-text>
@@ -44,12 +43,14 @@
         style="white-space: pre-wrap"
         v-text="getStatusValue(service, 'description')"
       />
-      <v-card-text v-else>読み込み中...</v-card-text>
+      <v-card-text v-show="getStatusValue(service, 'description') == ''">
+        読み込み中...
+      </v-card-text>
 
       <v-spacer />
 
       <v-card-actions>
-        <v-tooltip v-if="getStatusValue(service, 'detailUrl') != ''" bottom>
+        <v-tooltip v-if="getStatusValue(service, 'detailUrl') !== null" bottom>
           <template #activator="{ on, attrs }">
             <v-btn
               class="mx-1"
@@ -102,7 +103,7 @@
       </v-card-actions>
     </v-card>
 
-    <v-dialog v-model="dialog" width="500">
+    <v-dialog v-model="dialog">
       <v-card>
         <v-card
           v-for="help of getHelps(service)"
@@ -110,8 +111,11 @@
           class="my-1"
         >
           <v-card-title v-text="help.title" />
-          <v-card-subtitle v-text="help.subtitle" />
-          <v-card-text v-text="help.text" />
+          <v-card-subtitle
+            v-if="help.subtitle !== undefined"
+            v-text="help.subtitle"
+          />
+          <v-card-text v-html="help.text" />
         </v-card>
 
         <v-card-actions>
@@ -125,34 +129,9 @@
 
 <script lang="ts">
 import Vue from 'vue'
-
-export type ServiceId = string
-
-export interface Service {
-  sid: ServiceId
-  icon: string
-  name: string
-  tags: string[]
-  websiteUrl: string | null
-  reportUrl: string | null
-  flex: number
-}
-
-export interface Help {
-  sid: ServiceId
-  title: string
-  subtitle: string
-  text: string
-}
-
-export interface Status {
-  sid: ServiceId
-  description: string
-  detailUrl: string | null
-  datetime: string
-  status: string
-  loading: boolean
-}
+import Help from '~/api/models/help'
+import Service from '~/api/models/service'
+import Status from '~/api/models/status'
 
 export default Vue.extend({
   name: 'StatusContainerComponent',
@@ -201,3 +180,30 @@ export default Vue.extend({
   },
 })
 </script>
+
+<style scoped>
+.status-chip {
+  align-items: center;
+  cursor: default;
+  display: inline-flex;
+  line-height: 20px;
+  max-width: 100%;
+  outline: none;
+  overflow: hidden;
+  padding: 0 12px;
+  position: relative;
+  text-decoration: none;
+  transition-duration: 0.28s;
+  transition-property: box-shadow, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  vertical-align: middle;
+  white-space: nowrap;
+  margin-right: 4px !important;
+  border-color: rgba(0 0 0 12%);
+  color: rgba(0 0 0 87%);
+  border-radius: 12px;
+  font-size: 12px;
+  height: 24px;
+  background: #e0e0e0;
+}
+</style>

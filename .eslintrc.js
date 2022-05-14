@@ -22,11 +22,13 @@ module.exports = {
         },
       },
     ],
+    'vue/no-v-html': 'off',
     'prettier/prettier': [
       'error',
       {
         htmlWhitespaceSensitivity: 'ignore',
       },
     ],
+    'no-console': 'off',
   },
 }
