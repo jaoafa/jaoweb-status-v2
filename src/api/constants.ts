@@ -177,7 +177,7 @@ export const SERVICES: Service[] = [
     tags: ['Web', 'Backend'],
     websiteUrl: null,
     reportUrl: null,
-    check: new CheckRequestHead('api.jaoafa.com'),
+    check: new CheckRequestHead('api.jaoafa.com', 'api.jaoafa.com/v2'),
     flex: 3,
   },
 ]
@@ -272,5 +272,85 @@ export const HELPS: Help[] = [
     sid: 'database-zakurohat',
     title: 'ステータスチェック方法',
     text: 'ZakuroHatDB にログイン試行を行い、ログインできるかを確認しています。',
+  },
+  {
+    sid: 'mojang-minecraftservices',
+    title: 'minecraftservices.com とは？',
+    text: 'Minecraft の販売元 Mojang の管理する Minecraft サービスサーバです。<br>詳しい情報は <a href="https://twitter.com/MojangStatus">Twitter @MojangStatus</a>をご覧ください。<br>公式のトラブルシューティングは<a href="https://help.minecraft.net/hc/en-us/articles/4408949606541-Minecraft-Java-Edition-Troubleshooting">こちら (英語)</a>',
+  },
+  {
+    sid: 'mojang-minecraftservices',
+    title: 'ステータスチェック方法',
+    text: 'api.minecraftservices.com に PING を実施し、サーバが稼働しているかを確認しています。',
+  },
+  {
+    sid: 'mojang-mojangcom',
+    title: 'mojang.com とは？',
+    text: 'Minecraft の販売元 Mojang のサイトです。<br>詳しい情報は <a href="https://twitter.com/MojangStatus">Twitter @MojangStatus</a>をご覧ください。<br>公式のトラブルシューティングは<a href="https://help.minecraft.net/hc/en-us/articles/4408949606541-Minecraft-Java-Edition-Troubleshooting">こちら (英語)</a>',
+  },
+  {
+    sid: 'mojang-mojangcom',
+    title: 'ステータスチェック方法',
+    text: 'mojang.com に PING を実施し、サーバが稼働しているかを確認しています。',
+  },
+  {
+    sid: 'mojang-minecraftnet',
+    title: 'minecraft.net とは？',
+    text: 'Minecraft の公式サイトです。<br>詳しい情報は <a href="https://twitter.com/MojangStatus">Twitter @MojangStatus</a>をご覧ください。<br>公式のトラブルシューティングは<a href="https://help.minecraft.net/hc/en-us/articles/4408949606541-Minecraft-Java-Edition-Troubleshooting">こちら (英語)</a>',
+  },
+  {
+    sid: 'mojang-minecraftnet',
+    title: 'ステータスチェック方法',
+    text: 'minecraft.net に PING を実施し、サーバが稼働しているかを確認しています。',
+  },
+  {
+    sid: 'mojang-minecraft-skins',
+    title: 'AWS MinecraftSkins とは？',
+    text: 'Mojang が管理する、Amazon Web Services 上の Minecraft スキン S3 バケットです。<br>詳しい情報は <a href="https://twitter.com/MojangStatus">Twitter @MojangStatus</a>をご覧ください。<br>公式のトラブルシューティングは<a href="https://help.minecraft.net/hc/en-us/articles/4408949606541-Minecraft-Java-Edition-Troubleshooting">こちら (英語)</a>',
+  },
+  {
+    sid: 'mojang-minecraft-skins',
+    title: 'ステータスチェック方法',
+    text: 's3.amazonaws.com に PING を実施し、サーバが稼働しているかを確認しています。',
+  },
+  {
+    sid: 'jms-web-users',
+    title: 'users.jaoafa.com とは？',
+    text: 'jao Minecraft Server で活動するユーザーの情報を表示する Web サイトです。',
+  },
+  {
+    sid: 'jms-web-users',
+    title: 'ステータスチェック方法',
+    text: 'users.jaoafa.com に HEAD リクエストを発行し、レスポンスコードが 200 であるかを確認しています。',
+  },
+  {
+    sid: 'jms-web-map',
+    title: 'map.jaoafa.com とは？',
+    text: 'jao Minecraft Server の Minecraft サーバマップを表示する Web サイトです。',
+  },
+  {
+    sid: 'jms-web-map',
+    title: 'ステータスチェック方法',
+    text: 'map.jaoafa.com に HEAD リクエストを発行し、レスポンスコードが 200 であるかを確認しています。',
+  },
+  {
+    sid: 'jms-web-wiki',
+    title: 'wiki.jaoafa.com とは？',
+    text: 'jaopedia と呼ばれています。jao Minecraft Server コミュニティに関する様々な情報がまとめられている Wiki です。',
+  },
+  {
+    sid: 'jms-web-wiki',
+    title: 'ステータスチェック方法',
+    text: 'wiki.jaoafa.com に HEAD リクエストを発行し、レスポンスコードが 200 であるかを確認しています。',
+  },
+  {
+    sid: 'jms-web-api',
+    title: 'api.jaoafa.com とは？',
+    text: 'jao Minecraft Server に関する情報が取得できる Web API サービスです。',
+  },
+  {
+    sid: 'jms-web-api',
+    title: 'ステータスチェック方法',
+    text: 'api.jaoafa.com と api.jaoafa.com/v2 に HEAD リクエストを発行し、レスポンスコードが 200 であるかを確認しています。',
   },
 ]
