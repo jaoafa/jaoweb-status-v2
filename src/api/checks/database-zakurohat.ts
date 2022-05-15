@@ -2,7 +2,7 @@ import { createConnection } from 'mysql2/promise'
 import loadConfig from '../lib/loadConfig'
 import { BaseCheck, CheckResponse } from './base'
 
-export default class DatabaseZakuroHat extends BaseCheck {
+export default class CheckDatabaseZakuroHat extends BaseCheck {
   async execute(): Promise<CheckResponse> {
     const config = loadConfig()
 

@@ -7,7 +7,7 @@ import { BaseCheck, CheckResponse } from './base'
  *
  * jaoMainDBにログイン試行し、正常にログインできるかを確認する。
  */
-export default class DatabasejaoMain extends BaseCheck {
+export default class CheckDatabasejaoMain extends BaseCheck {
   async execute(): Promise<CheckResponse> {
     const config = loadConfig()
 

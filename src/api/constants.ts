@@ -1,9 +1,9 @@
-import DatabasejaoMain from './checks/database-jaomain'
-import DatabaseZakuroHat from './checks/database-zakurohat'
+import CheckDatabasejaoMain from './checks/database-jaomain'
+import CheckDatabaseZakuroHat from './checks/database-zakurohat'
 import CheckjMSDiscord from './checks/jms-gamers-club'
 import CheckjMSMinecraft from './checks/jms-minecraft'
 import CheckPingServer from './checks/ping-server'
-import ServerZakuroHat from './checks/server-zakurohat'
+import CheckServerZakuroHat from './checks/server-zakurohat'
 import Help from './models/help'
 import Service from './models/service'
 import CheckRequestHead from './checks/request-head'
@@ -77,7 +77,7 @@ export const SERVICES: Service[] = [
     tags: ['Server'],
     websiteUrl: null,
     reportUrl: null,
-    check: new ServerZakuroHat(),
+    check: new CheckServerZakuroHat(),
     flex: 3,
   },
   {
@@ -87,7 +87,7 @@ export const SERVICES: Service[] = [
     tags: ['Database'],
     websiteUrl: null,
     reportUrl: null,
-    check: new DatabasejaoMain(),
+    check: new CheckDatabasejaoMain(),
     flex: 3,
   },
   {
@@ -97,7 +97,7 @@ export const SERVICES: Service[] = [
     tags: ['Database'],
     websiteUrl: null,
     reportUrl: null,
-    check: new DatabaseZakuroHat(),
+    check: new CheckDatabaseZakuroHat(),
     flex: 3,
   },
   {

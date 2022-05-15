@@ -2,7 +2,7 @@ import axios from 'axios'
 import loadConfig from '../lib/loadConfig'
 import { BaseCheck, CheckResponse } from './base'
 
-export default class ServerZakuroHat extends BaseCheck {
+export default class CheckServerZakuroHat extends BaseCheck {
   async execute(): Promise<CheckResponse> {
     const config = loadConfig()
     const hostId = config.checks.zakurohat.mackerel.hostId
