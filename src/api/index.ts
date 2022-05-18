@@ -1,4 +1,5 @@
 import express, { json as expressJson } from 'express'
+import cors from 'cors'
 
 import GetRootEndPoint from './endpoints'
 import GetStatusEndPoint from './endpoints/status/get-status'
@@ -11,6 +12,7 @@ import DeleteAdminCustomEndPoint from './endpoints/custom/delete-custom'
 
 const app = express()
 app.use(expressJson())
+app.use(cors())
 
 const endpoints: EndPoint[] = [
   new GetRootEndPoint(app),
