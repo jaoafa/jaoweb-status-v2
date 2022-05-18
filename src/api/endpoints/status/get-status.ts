@@ -49,6 +49,7 @@ async function getStatus(sid: string): Promise<Status> {
   if (customStatus) {
     return {
       sid: service.sid,
+      title: customStatus.title,
       description:
         customStatus.text +
         '\n(' +

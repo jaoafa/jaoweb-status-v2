@@ -37,6 +37,9 @@
         />
       </v-card-text>
 
+      <v-card-text v-if="getStatusValue(service, 'title') != ''" class="py-1">
+        <h2 v-text="getStatusValue(service, 'title')" />
+      </v-card-text>
       <v-card-text
         v-if="getStatusValue(service, 'description') != ''"
         class="py-1 align-start"
