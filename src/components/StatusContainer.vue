@@ -53,7 +53,7 @@
       <v-spacer />
 
       <v-card-actions>
-        <v-tooltip v-if="getStatusValue(service, 'detailUrl') !== null" bottom>
+        <v-tooltip v-if="getStatusValue(service, 'detailUrl') != null" bottom>
           <template #activator="{ on, attrs }">
             <v-btn
               class="mx-1"
