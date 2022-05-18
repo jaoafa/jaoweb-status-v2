@@ -1,6 +1,10 @@
 import fs from 'fs'
 
 interface ConfigStructure {
+  api: {
+    dbPath: string
+    token: string
+  }
   mackerel: {
     apiKey: string
   }

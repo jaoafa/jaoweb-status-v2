@@ -1,3 +1,4 @@
+import { resolve } from 'path'
 import { NuxtConfig } from '@nuxt/types'
 
 const baseName = 'jao Minecraft Server Status'
@@ -122,6 +123,10 @@ const config: NuxtConfig = {
 
   server: {
     host: '0.0.0.0',
+  },
+
+  alias: {
+    '~/*': resolve(__dirname, 'src/*'),
   },
 
   telemetry: false,
