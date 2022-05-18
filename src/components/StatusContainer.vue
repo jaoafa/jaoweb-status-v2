@@ -37,23 +37,23 @@
         />
       </v-card-text>
 
-      <v-card-text v-if="getStatusValue(service, 'title') != ''" class="py-1">
+      <v-card-text v-if="isExistStatusValue(service, 'title')" class="py-1">
         <h2 v-text="getStatusValue(service, 'title')" />
       </v-card-text>
       <v-card-text
-        v-if="getStatusValue(service, 'description') != ''"
+        v-if="isExistStatusValue(service, 'description')"
         class="py-1 align-start"
         style="white-space: pre-wrap"
         v-text="getStatusValue(service, 'description')"
       />
-      <v-card-text v-show="getStatusValue(service, 'description') == ''">
+      <v-card-text v-if="!isExistStatusValue(service, 'description')">
         読み込み中...
       </v-card-text>
 
       <v-spacer />
 
       <v-card-actions>
-        <v-tooltip v-if="getStatusValue(service, 'detailUrl') != null" bottom>
+        <v-tooltip v-if="isExistStatusValue(service, 'detailUrl')" bottom>
           <template #activator="{ on, attrs }">
             <v-btn
               class="mx-1"
@@ -173,6 +173,15 @@ export default Vue.extend({
         return ''
       }
       return match[key]
+    },
+    isExistStatusValue(service: Service, key: keyof Status): boolean {
+      const match = this.statuses.find((status) => status.sid === service.sid)
+      if (!match) {
+        return false
+      }
+      return (
+        match[key] !== undefined && match[key] !== null && match[key] !== ''
+      )
     },
     isExistsHelp(service: Service): boolean {
       return this.helps.some((help) => help.sid === service.sid)
