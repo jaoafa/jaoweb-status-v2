@@ -57,7 +57,7 @@
     "eslint-plugin-vue": "8.7.1",
     "express": "4.18.1",
     "husky": "8.0.1",
-    "lint-staged": "13.0.1",
+    "lint-staged": "13.0.2",
     "mysql2": "2.3.3",
     "net": "1.0.2",
     "ping": "0.4.2",
