@@ -62,7 +62,7 @@
     "net": "1.0.2",
     "ping": "0.4.2",
     "postcss-html": "1.4.1",
-    "prettier": "2.7.0",
+    "prettier": "2.7.1",
     "sqlite3": "^5.0.8",
     "stylelint": "14.9.1",
     "stylelint-config-prettier": "9.0.3",
