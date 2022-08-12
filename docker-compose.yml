@@ -1,3 +1,4 @@
+name: jaoweb-status-v2
 version: '3.8'
 
 services:
