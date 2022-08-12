@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - '6666:6666'
+    environment:
+      TZ: Asia/Tokyo
+      PORT: 6666
+    init: true
