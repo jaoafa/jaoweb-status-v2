@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   app:
-    build: .
+    image: ghcr.io/jaoafa/jaoweb-status-v2:latest
     ports:
       - '6669:6669'
     environment:
