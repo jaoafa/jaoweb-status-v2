@@ -50,7 +50,7 @@
     "axios": "1.2.6",
     "cardinal": "2.1.1",
     "cors": "2.8.5",
-    "eslint": "8.32.0",
+    "eslint": "8.33.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-plugin-nuxt": "4.0.0",
     "eslint-plugin-prettier": "4.2.1",
