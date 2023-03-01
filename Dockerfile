@@ -1,4 +1,4 @@
-FROM node:16
+FROM node:19
 
 RUN apt-get update && \
   apt-get upgrade -y && \
