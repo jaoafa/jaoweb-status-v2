@@ -63,7 +63,7 @@
     "ping": "0.4.4",
     "postcss-html": "1.5.0",
     "prettier": "2.8.4",
-    "sqlite3": "5.1.4",
+    "sqlite3": "5.1.5",
     "stylelint": "15.2.0",
     "stylelint-config-prettier": "9.0.5",
     "stylelint-config-recommended-vue": "1.4.0",
