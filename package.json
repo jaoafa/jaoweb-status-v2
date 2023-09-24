@@ -39,7 +39,7 @@
     "@babel/eslint-parser": "7.22.9",
     "@commitlint/cli": "17.6.7",
     "@commitlint/config-conventional": "17.6.7",
-    "@nuxt/types": "2.16.0",
+    "@nuxt/types": "2.17.1",
     "@nuxt/typescript-build": "3.0.1",
     "@nuxtjs/eslint-config-typescript": "12.0.0",
     "@nuxtjs/eslint-module": "4.1.0",
